@@ -45,16 +45,34 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    "Usr/application/appLayer_init.c"
+    "Usr/application/timScheduler.c"
+    "Usr/bsp/bsp_can.c"
+    "Usr/bsp/bsp_delay.c"
+    "Usr/bsp/bsp_i2c.c"
+    "Usr/bsp/bsp_peripheral.c"
+    "Usr/bsp/bsp_spi.c"
+    "Usr/bsp/bsp_tim.c"
+    "Usr/bsp/bsp_usart.c"
+    "Usr/task/communicationTask.c"
+    "Usr/task/initTask.c"
+    "Usr/utils/lib/applyMath.cpp"
+    "Usr/utils/lib/memTools.c"
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    "Usr/application"
+    "Usr/bsp"
+    "Usr/task"
+    "Usr/utils/inc"
 )
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+    
 )
 
 # Remove wrong libob.a library dependency when using cpp files
