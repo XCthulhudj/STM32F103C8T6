@@ -7,10 +7,31 @@
 #endif
 
 /* Memory for RAM */
-// #define USR_RAM_SIZE (1024u * 10u) // 10KB
 
-/* Task definitions */
-#define TASK_NUM 1u
+/* mainStream, defined in "appLayer_init.c" */
+//boxFlag
+enum{
+    BOF_RX1 = 0u,
+    BOF_TX1 = 1u,
+};
 
+/* Task TIM definitions */
+#define TASK_TIM_NUM 3u
+
+enum{
+    TASK_TIM_GPIO_PC13_INDEX = 0u,
+    TASK_TIM_PWM_INDEX = 1u,
+    TASK_TIM_TXRX_INDEX = 2u,
+};
+
+enum{
+    TASK_TIM_NUM0 = TASK_TIM_GPIO_PC13_INDEX,
+    TASK_TIM_NUM1 = TASK_TIM_PWM_INDEX,
+    TASK_TIM_NUM2 = TASK_TIM_TXRX_INDEX,
+};
+
+#include "appLayer_init.h"
+#include "timScheduler.h"
+#include "bsp_peripheral.h"
 
 #endif

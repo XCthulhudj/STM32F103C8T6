@@ -5,6 +5,8 @@
 uint8_t bsp_delayNonBlocking_ms(uint32_t ms){
     static uint32_t sysTick = 0;
     if(uwTick - sysTick < ms) return 0;
-    sysTick = uwTick;
+    else{
+        sysTick = uwTick;
+    }
     return 1;
 }

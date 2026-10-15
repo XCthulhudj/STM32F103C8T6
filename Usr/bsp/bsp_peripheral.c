@@ -3,5 +3,6 @@
 
 void bsp_peripheral_init(void){
     bsp_tim_init();
-    bsp_usart_init();
+
+    bsp_usart_init_hal();
 }

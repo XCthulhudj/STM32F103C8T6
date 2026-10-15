@@ -7,6 +7,12 @@ extern "C" {
 
 #include "struct_typedef.h"
 
+typedef struct{
+    uint8_t boxFlag[10];
+}topLayer_t;
+
+extern volatile topLayer_t mainStream;
+
 void appLayer_init(void);
 void taskScheduler_running(void);
 
